@@ -1,0 +1,19 @@
+{% extends "app1/base.html" %}
+{% block title %}Rules{% endblock %}
+{% block content %}
+  <div class="rules-container">
+    <h2>CSCI 598: Midterm Project by Akshith Macharla</h2>
+    <h5>Chess Rules:</h3>
+    <ul>
+      <li><strong>Pawn:</strong> Moves forward one square; captures diagonally.</li>
+      <li><strong>Rook:</strong> Moves horizontally or vertically any number of squares.</li>
+      <li><strong>Knight:</strong> Moves in an “L” shape (two squares in one direction, then one perpendicular).</li>
+      <li><strong>Bishop:</strong> Moves diagonally any number of squares.</li>
+      <li><strong>Queen:</strong> Moves any number of squares in any direction.</li>
+      <li><strong>King:</strong> Moves one square in any direction.</li>
+    </ul>
+    <p>
+      Additional special moves include <strong>castling</strong>, <strong>en passant</strong>, and <strong>pawn promotion</strong>.
+    </p>
+  </div>
+{% endblock %}

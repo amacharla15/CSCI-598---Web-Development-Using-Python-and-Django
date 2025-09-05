@@ -1,0 +1,294 @@
+/* Center the H1 element */
+h1 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Body styling with top padding for fixed navbar */
+body {
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+    padding-top: 50px; /* Ensure content sits below fixed navbar */
+    background-color: blanchedalmond;
+}
+
+/* 
+  Remove or comment out the global "div { text-align: center; }" rule 
+  to avoid forcing all divs to center. 
+  If you need some elements centered, do so via specific classes.
+*/
+/* div {
+    font-family: monospace;
+    text-align: center;
+} */
+
+/* Chessboard table */
+table {
+    background-color: tan;
+    /* Remove margin: auto; so the table doesn't re-center itself */
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    font-family: monospace;
+    background: tan;
+    width: 60px;
+    height: 60px;
+    border: 1px solid black;
+    font-size: 40px;
+    text-align: center;
+}
+
+th {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    padding: 2px;
+}
+
+/* Checkerboard pattern */
+tr:nth-child(even) > td:nth-child(even) {
+    background: chocolate;
+}
+tr:nth-child(odd) > td:nth-child(odd) {
+    background: chocolate;
+}
+
+hr {
+    border: 2px solid black;
+    opacity: 1;
+}
+
+li {
+    font-family: monospace;
+    font-size: 18px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    height: auto;
+    border: 2px solid #000;
+    border-radius: 4px;
+}
+
+/* Remove negative margin; use a positive margin */
+.container.mt-4 {
+    margin-top: 20px !important;
+    padding-top: 0px !important;
+}
+
+/* Fixed navbar with a high z-index */
+.navbar {
+    background-color: rgba(255, 235, 205, 0.8);
+    padding: 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Navbar brand styling */
+.navbar-light .navbar-brand {
+    color: rgb(50, 50, 50);
+    font-weight: bold;
+    font-family: monospace;
+}
+
+/* Nav links */
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(90, 90, 90);
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover effect on nav links */
+.navbar-light .navbar-nav .nav-link:hover {
+    color: rgb(40, 40, 40);
+}
+
+/* Active nav item */
+.navbar-light .navbar-nav .nav-item.active .nav-link {
+    background: none;
+    color: rgb(90, 90, 90);
+}
+
+/* Chess form styling */
+.chess-form {
+    background-color: transparent;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    font-size: small;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 10px;
+}
+
+/* Ensure form sticks to bottom of chessboard */
+.chess-board-container {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+/* Input fields */
+.chess-controls .form-control {
+    font-family: monospace;
+    font-size: 10px;
+    padding: 4px 8px;
+    width: 150px;
+    height: 20px;
+    margin: 8px;
+}
+
+/* Placeholder styling */
+.chess-form .form-control::placeholder {
+    color: lightgray;
+    opacity: 1;
+}
+
+/* Once user types, text is black */
+.chess-form .form-control:not(:placeholder-shown) {
+    color: black !important;
+}
+
+/* Hover effect on input fields */
+.chess-form .form-control:hover {
+    background-color: rgb(242, 250, 1);
+    color: black !important;
+}
+
+/* Focused input field */
+.chess-form .form-control:focus {
+    background-color: rgb(242, 250, 1);
+    color: black;
+    border: 2px solid sienna;
+    padding: 0px;
+    outline: none;
+}
+
+/* Move/Reset buttons */
+.chess-form .btn {
+    background-color: #d2ab74; /* soft tan */
+    border: 1px solid black;
+    color: white;
+    font-family: monospace;
+    font-size: 12px;
+    width: 70px;
+    height: 20px;
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Hover effect on buttons */
+.chess-form .btn:hover {
+    background-color: sienna;
+    color: white;
+}
+
+/* A row for controlling layout of Source/Destination + Move/Reset */
+.chess-controls {
+    margin-top: 2px;
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    flex-wrap: nowrap;
+    background-color: blanchedalmond;
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+.chess-controls .btn {
+    background-color: rgb(226, 194, 153);  /* soft tan background */
+    color: black;
+    border: 1px solid black;
+    font-family: monospace;
+    font-size: 10px;
+    padding: 4px 12px;
+    width: 50px;
+    height: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.rules-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    text-align: left;
+    font-family: monospace;
+}
+
+.rules-container h2 {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    color: #3b2f2f;
+}
+
+.rules-container h5 {
+    font-size: 18px;
+    font-weight: bold;
+    color: sienna;
+    margin-bottom: 12px;
+    padding-bottom: 4px;
+}
+
+.rules-container ul {
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+.rules-container p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* ===================== ERROR OVERLAY ===================== */
+
+/* Make the chess-container the reference for absolute positioning */
+.chess-container {
+    position: relative;
+    /* Make this container block-level so margin: auto works */
+    display: block;
+    /* Shrink-wrap the container around the table width */
+    width: max-content;
+    /* Center the container horizontally in its parent */
+    margin: 0 auto;
+}
+
+
+/* Absolutely position the error overlay at the container's center */
+.error-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    color: yellow;
+    border: 1px solid yellow;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.error-icon {
+    font-weight: bold;
+}

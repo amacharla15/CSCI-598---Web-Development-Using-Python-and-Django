@@ -1,0 +1,22 @@
+{% extends "app1/base.html" %}
+{% load static %}
+{% block title %}About{% endblock %}
+{% block content %}
+  <br>
+  <h1>CSCI 598 Midterm Project By Akshith Macharla</h1>
+  <h5>About:</h5>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <p>
+          My name is Akshith Macharla. I have a deep passion for Astronomy and Physics, particularly in areas related to space and time.
+          My ultimate goal is to live long enough to witness the emergence of a new civilization and see the realization of the Dyson Sphere,
+          a megastructure designed to harness a star's energy. I also aspire to witness breakthroughs in time travel and uncover the hidden mysteries of the universe.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <img src="{% static 'app1/images/photo.jpg' %}" class="img-fluid" alt="Akshith Macharla">
+      </div>
+    </div>
+  </div>
+{% endblock %}

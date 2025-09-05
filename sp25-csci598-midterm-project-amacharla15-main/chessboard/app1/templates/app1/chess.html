@@ -1,0 +1,53 @@
+{% extends "app1/base.html" %}
+{% block title %}Chess Board{% endblock %}
+{% block content %}
+  <h1>CSCI 598: Midterm Project by Akshith Macharla</h1>
+  
+  <!-- The chess-container is position: relative so the overlay can center -->
+  <div class="chess-container">
+    {% if error %}
+      <div class="error-overlay">
+        <span class="error-icon">❗</span>
+        <span class="error-text">{{ error }}</span>
+      </div>
+    {% endif %}
+    
+    <form method="POST" action="{% url 'chess' %}">
+      {% csrf_token %}
+      <!-- Chess Board Table -->
+      <table>
+        {% comment %}
+          forloop.revcounter = 8..1 (so row 8 is top, row 1 is bottom)
+        {% endcomment %}
+        {% for row in board %}
+          <tr>
+            <th>{{ forloop.revcounter }}</th>
+            {% for cell in row %}
+              <td>{% autoescape off %}{{ cell }}{% endautoescape %}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+        <!-- File labels at bottom -->
+        <tr>
+          <th></th>
+          <th>a</th>
+          <th>b</th>
+          <th>c</th>
+          <th>d</th>
+          <th>e</th>
+          <th>f</th>
+          <th>g</th>
+          <th>h</th>
+        </tr>
+      </table>
+      
+      <!-- Controls Row -->
+      <div class="chess-controls">
+        <input type="text" name="source" class="form-control" placeholder="e2 (Source)">
+        <input type="text" name="destination" class="form-control" placeholder="e4 (Destination)">
+        <button type="submit" class="btn btn-dark">Move</button>
+        <button type="submit" name="reset" value="1" class="btn btn-danger">Reset</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}
